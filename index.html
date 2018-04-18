@@ -96,7 +96,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- mo.js CDN -->
     <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
-    <!-- mo.js paint splatter shape -->
+    <!-- mo.js Custom Burst -->
     <script>
         const paintSplatter = new mojs.Burst({
         left: 0, top: 0,
@@ -112,13 +112,11 @@
             delay:        'rand(0, 150)',
         }
         });
-    </script>
-    <!-- Set burst to onclick at mouse location -->
-    <script>
+        // Set burst to onclick at mouse location
         document.addEventListener( 'click', function (e) {
-            paintSplatter
+        paintSplatter
             .tune({ x: e.pageX, y: e.pageY })
-            .setSpeed(3)
+            .generate()
             .replay();
         });
     </script>
