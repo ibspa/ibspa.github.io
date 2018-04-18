@@ -16,7 +16,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .hero {
+        .hero img{
             background: url('assets/IBSPA(resized).jpg');
             background-repeat: no-repeat;
             background-size: cover;
@@ -62,7 +62,7 @@
     </style>
 </head>
 
-<body class="paintOverlay">
+<body>
     
     <div class="alert alert-light text-dark text-center font-weight-bold" role="alert" style="margin: 0 auto;">
         Site Coming Soon!
@@ -72,7 +72,7 @@
     </div>
 
     <div class="hero">
-        <img src="assets/IBSPA(resized).jpg" style="background-repeat: no-repeat;background-size: cover;height: 100%;width: 100%;">
+        <img src="assets/IBSPA(resized).jpg">
     </div>
 
     <div class="jumbotron jumbotron-fluid text-light m-0 text-center" id="about-us-jumbo">
@@ -81,12 +81,14 @@
                                               Our experimental extreme sports facility will push you to the limit.
             </h5>
             <br>
+            <img src="assets/paint-splatter.png" alt="bg-splatter" class="position-absolute" style="right: 0;z-index: 0;">
+
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
                     Book Now!
-                </button>
+            </button>
             
-            <!-- Modal -->
+            <!-- Booking modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -103,15 +105,17 @@
             </div>
         </div>
     </div>
-
+    
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 p-0">
-                <img src="assets/Pricing.jpg" style="height: auto; width: 100%;margin: 0 auto;">
-                <div class="overlay"></div>
-            </div>
+            <!-- Pricing section -->
             <div class="col-md-6 p-0">
                 <img src="assets/SBBF.jpg" style="height: auto; width: 100%;margin: 0 auto;">
+                <div class="overlay"></div>
+            </div>
+            <!-- Small building section -->
+            <div class="col-md-6 p-0">
+                <img src="assets/Pricing.jpg" style="height: auto; width: 100%;margin: 0 auto;">
                 <div class="overlay"></div>
             </div>
         </div>
