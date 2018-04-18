@@ -62,7 +62,7 @@
         <img src="assets/IBSPA(resized).jpg" style="background-repeat: no-repeat;background-size: cover;height: 100%;width: 100%;">
     </div>
 
-    <div class="jumbotron text-light m-0 text-center" style="background-image: linear-gradient(-225deg, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%);">
+    <div class="jumbotron jumbotron-fluid text-light m-0 text-center" style="background-image: linear-gradient(-225deg, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%);">
             <h5 class="p-0 m-0" id="about-us">Millions of people will live their whole life without experiencing the thrill of shooting at someone with a paintball gun while flying through the air with glowsticks, but not you.
                     Our experimental extreme sports facility will push you to the limit.</h5>
         </div>
@@ -96,16 +96,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- mo.js CDN -->
     <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
-    <!-- Set burst to onclick at mouse location -->
-    <script>
-        document.addEventListener( 'click', function (e) {
-            paintSplatter
-            .tune({ x: e.pageX, y: e.pageY })
-            .setSpeed(3)
-            .replay();
-        });
-    </script>
-    <!-- mo.js Custom Burst -->
+    <!-- mo.js paint splatter shape -->
     <script>
         const paintSplatter = new mojs.Burst({
         left: 0, top: 0,
@@ -121,11 +112,13 @@
             delay:        'rand(0, 150)',
         }
         });
-
+    </script>
+    <!-- Set burst to onclick at mouse location -->
+    <script>
         document.addEventListener( 'click', function (e) {
-        paintSplatter
+            paintSplatter
             .tune({ x: e.pageX, y: e.pageY })
-            .generate()
+            .setSpeed(3)
             .replay();
         });
     </script>
