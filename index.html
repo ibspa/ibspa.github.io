@@ -71,10 +71,44 @@
     </div>
 
     <!-- bootstrap CDN -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- mo.js CDN -->
+    <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <!-- Set burst to onclick at mouse location -->
+    <script>
+        document.addEventListener( 'click', function (e) {
+            meteors
+            .tune({ x: e.pageX, y: e.pageY })
+            .setSpeed(3)
+            .replay();
+        });
+    </script>
+    <!-- mo.js Custom Burst -->
+    <script>
+        const bubbles = new mojs.Burst({
+        left: 0, top: 0,
+        radius:   35,
+        count:    3,
+        children: {
+            fill:         [ '#000', '#83D9EB', '#27254A' ],
+            scale:        4,
+            strokeWidth:  { 8: 0 },
+            radius:       { 0 : 'rand(8, 12)' },
+            degreeShift:  'rand(-50, 50)',
+            duration:     100,
+            delay:        'rand(0, 150)',
+        }
+        });
 
+        document.addEventListener( 'click', function (e) {
+        bubbles
+            .tune({ x: e.pageX, y: e.pageY })
+            .generate()
+            .replay();
+        });
+    </script>
 </body>
 
 </html>
