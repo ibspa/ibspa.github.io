@@ -79,7 +79,7 @@
     <!-- Set burst to onclick at mouse location -->
     <script>
         document.addEventListener( 'click', function (e) {
-            meteors
+            paintSplatter
             .tune({ x: e.pageX, y: e.pageY })
             .setSpeed(3)
             .replay();
@@ -87,7 +87,7 @@
     </script>
     <!-- mo.js Custom Burst -->
     <script>
-        const bubbles = new mojs.Burst({
+        const paintSplatter = new mojs.Burst({
         left: 0, top: 0,
         radius:   35,
         count:    3,
@@ -103,12 +103,13 @@
         });
 
         document.addEventListener( 'click', function (e) {
-        bubbles
+        paintSplatter
             .tune({ x: e.pageX, y: e.pageY })
             .generate()
             .replay();
         });
     </script>
+	
 </body>
 
 </html>
